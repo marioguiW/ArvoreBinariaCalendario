@@ -71,7 +71,7 @@ int libera_arvore(Evento * raiz){
 int main(){
     lista* cabeca = criaLista();
     Evento *raiz = criaArvore();
-    int option, mes, dia, esc_filtro, dia_busca, mes_busca, achou, cont_balanceamento = 0, cont = 0;
+    int option, mes, dia, achou, cont_balanceamento = 0, cont = 0;
     char descricao[100];
     system("cls");
 

@@ -15,6 +15,7 @@ int InsereNoFinal(lista* inicio, Evento nodeArv) {
         return 0;
     } else {
         if ((*inicio) == NULL) {
+            novo->prox = NULL;
             *inicio = novo;
         } else {
             node* temp;
@@ -55,7 +56,7 @@ int construirLista(Evento nodeArv, lista* list) {
     InsereNoFinal(list, nodeArv);
     printf("aqui passou3");
     construirLista(nodeArv->dir, list);
-    
+    printf("passou aqui tambem PORRA");
 }
 
 
