@@ -78,12 +78,9 @@ int main(){
         if(cont_balanceamento == 3){
             printf("Realizando o Balanceamento!\n");
             construirLista(*raiz, cabeca);
-            printf("Foi 1?");
             cont = contar_nos(raiz);
-            printf("Foi 2?");
             *raiz = listaParaArvore(cabeca, cont);
             cont_balanceamento = 0;
-            printf("Foi?");
         }
 
         printf("--BEM VINDO A AGENDA--\n");
@@ -95,6 +92,7 @@ int main(){
         printf("5 - Sair\n");
 
         printf("Escolha uma opcao: ");
+        printf(">> ");
         scanf("%d", &option);
 
         switch (option)
@@ -102,11 +100,15 @@ int main(){
         case 1:
             system("cls");
             do{
+
+
                 printf("--Novo Evento--\n");
                 printf("Insira o dia: ");
                 scanf("%d", &dia);
                 printf("Insira o dia do mes: ");
                 scanf("%d", &mes);
+
+
                 if (verificaData(dia, mes) == 1){
                         printf("Data Incorreta!\n");
                 }else{
