@@ -32,7 +32,7 @@ int InsereNoFinal(lista* inicio, Evento nodeArv) {
 }
 
 void exibelista(lista*inicio){
-    
+
     if(*inicio == NULL){
         printf("Lista vazia");
     }else{
@@ -92,7 +92,8 @@ no *listaParaArvore(lista *head, int tamanho) {
 
     // Avançar até o meio da lista
     lista *atual = head;
-    for (int i = 0; i < meio; i++) {
+    int i;
+    for (i = 0; i < meio; i++) {
         atual = &((*atual)->prox);
     }
 

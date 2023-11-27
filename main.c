@@ -40,9 +40,8 @@ Evento* criaArvore(){
     return raiz;
 }
 
-// -----------------------------------------------------
 int verificaData(int dia, int mes) {
-    if (dia < 1 || dia > 31 || mes < 1 || mes > 12){ 
+    if (dia < 1 || dia > 31 || mes < 1 || mes > 12){
     return 1;
     }
     else{
@@ -87,7 +86,7 @@ int main(){
             printf("Foi?");
         }
 
-        printf("=============Agenda=============\n");
+        printf("--BEM VINDO A AGENDA--\n");
         printf("\nMenu:\n");
         printf("1 - Adicionar evento\n");
         printf("2 - Atualizar evento\n");
@@ -103,10 +102,10 @@ int main(){
         case 1:
             system("cls");
             do{
-                printf("=============Adicionar Evento=============\n");
-                printf("Digite o dia (1-31): ");
+                printf("--Novo Evento--\n");
+                printf("Insira o dia: ");
                 scanf("%d", &dia);
-                printf("Digite o mes (1-12): ");
+                printf("Insira o dia do mes: ");
                 scanf("%d", &mes);
                 if (verificaData(dia, mes) == 1){
                         printf("Data Incorreta!\n");
@@ -124,10 +123,10 @@ int main(){
         case 2:
             system("cls");
             do{
-                printf("=============ATUALIZAR=============\n");
-                printf("Informe o dia (1-31): ");
+                printf("--Editar--\n");
+                printf("Insira o dia: ");
                 scanf("%d", &dia);
-                printf("Informe o mes (1-12): ");
+                printf("Insira o dia do mes: ");
                 scanf("%d", &mes);
                 if (verificaData(dia, mes) == 1){
                         printf("Data invalida. Tente novamente.\n");
@@ -142,27 +141,21 @@ int main(){
             break;
         case 3:
             system("cls");
-            printf("=============DELETAR=============\n");
-            printf("Informe o dia (1-31) do evento a ser excluido: ");
+            printf("--Excluir--\n");
+            printf("Insira o dia: ");
             scanf("%d", &dia);
-            printf("Informe o mês (1-12) do evento a ser excluido: ");
+            printf("Insira o dia do mes: ");
             scanf("%d", &mes);
             remove_no(raiz, dia, mes);
             break;
         case 4:
             system("cls");
-            printf("=============EVENTOS=============\n");
+            printf("--Eventos--\n");
             listarArvore(*raiz);
             break;
         case 5:
             libera_arvore(raiz);
             exit(1);
-        case 6:
-            construirLista(*raiz, cabeca);
-            exibelista(cabeca);
-            cont = contar_nos(raiz);
-            *raiz = listaParaArvore(cabeca, cont);
-            break;
         default:
             printf("Opcao invalida\n");
         }
