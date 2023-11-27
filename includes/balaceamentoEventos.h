@@ -50,19 +50,18 @@ int construirLista(Evento nodeArv, lista* list) {
     if (nodeArv == NULL) {
         return 1;
     }
-    printf("aqui passou");
     construirLista(nodeArv->esq, list);
-    printf("aqui passou2");
+    
     InsereNoFinal(list, nodeArv);
-    printf("aqui passou3");
+    
     construirLista(nodeArv->dir, list);
-    printf("passou aqui tambem PORRA");
+    
 }
 
 
 no *criarNo(int mes, int dia, const char *desc) {
 
-    // cria novo no
+    // cria novo nó
 
     no *novoNo = (no *)malloc(sizeof(no));
 
@@ -87,10 +86,10 @@ no *listaParaArvore(lista *head, int tamanho) {
         return NULL;
     }
 
-    // Encontrar o meio da lista
+    // achar o meio
     int meio = tamanho / 2;
 
-    // Avançar até o meio da lista
+    // ir até o meio
     lista *atual = head;
     int i;
     for (i = 0; i < meio; i++) {
@@ -100,7 +99,7 @@ no *listaParaArvore(lista *head, int tamanho) {
     // Criar o nó correspondente ao meio
     no *raiz = criarNo((*atual)->evento->mes, (*atual)->evento->dia, (*atual)->evento->desc);
 
-    // Recursivamente construir as subárvores
+    // constroi as subarvores
     raiz->esq = listaParaArvore(head, meio);
     raiz->dir = listaParaArvore(&((*atual)->prox), tamanho - meio - 1);
 
